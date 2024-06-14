@@ -27,6 +27,35 @@ class Window(QMainWindow):
 
         self.show()
 
+def widgets(self):
+    self.p = PlowCanvas(self,width= 5, height= 5)
+
+    self.k_number_text = QLabel("Choose K:")
+    
+    self.k_number = QSpinBox(self)
+    self.k_number.setMinimum(1)
+    self.k_number.setMaximum(9)
+    self.k_number.setSingleStep(1)
+    self.k_number.valueChanged.connect(self.k_numberFunction)
+
+
+    self.text_save = QRadioButton("Save text". self)
+    self.plot_save = QRadioButton("Save plot". self)
+    self.text_plot_save = QRadioButton("Save text and plot". self)
+    self.text_plot_save.setChecked(True)
+
+    self.cluster = QPushButton("Cluster",self)
+    self.cluster.clicked.connect(self.clusterFunction)
+
+    self.result_list = QListWidget(self)
+
+def clusterFunction(self):
+    pass
+
+def k_numberFunction(self):
+    pass
+
+
 class PlowCanvas(FigureCanvas):
     def __init__(self, parent = None, width = 5, height = 5, dpi = 100):
         self.fig = Figure(figsize=(width,height),dpi = dpi)
